@@ -1,0 +1,33 @@
+.navbar-header{
+	color: black;
+}
+
+.navbar-brand div{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: black;
+
+}
+
+.text-center{
+	font-size: 2em;
+	font-weight: bold;
+	color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+li > div {
+	width: 100%;
+	text-align: center;
+	border: 1px black solid;
+}
+
+section{
+	height: 1000px;
+	border: solid 1px black;
+	background-color: maroon;
+}
