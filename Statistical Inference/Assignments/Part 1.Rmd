@@ -1,0 +1,45 @@
+---
+title: "Exponential Distribution Report By Charlie Chen"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+This is a report on the exploration of exponential distrubution and the application of Central Limit Theorem. A collection of a large numeber of exponentials will be compared to the sampling distribution of the mean of 40 exponentials of sample size 1000.
+
+## Simulation
+
+```{r exp}
+rexpo <-rexp(1000, rate = 0.2)
+hist(rexp(1000, rate = 0.2)) ## Examining the distribution of 1000 exponentials at rate = 0.2
+mns = NULL
+for (i in 1:1000) mns = c(mns, mean(rexp(40, rate = 0.2))) ## Create 1000 means of 40 randomly selected exponentials
+hist(mns) ## Examining the sampling distribution of the sample means
+
+## Sample Mean vs Theoretical Mean
+mean(rexpo)
+mean(mns)
+
+## Sample Variance vs Theoretical Variance
+var(rexpo)
+var(mns)
+```
+
+## Sample Mean vs Theoretical Mean
+We can see that the sample mean is very close to theoretical mean, indicating that the mean of the sampling distribution approximates the population statistic fairly well. 
+
+## Sample Variance vs Theoretical Variance
+We can see that the theoretical variance is approximately sampling variance * 40 (sample size).
+
+## Distribution
+The difference between the distribution of a large collection of random exponentials and the distribution of a large collection of averages of 40 exponentials is obvious. The former follows a exponential distribution, while the latter follows the normal distribution, observing the Central Limit Theorem. We can see the latter is normally distributted because it's roughly symmetric and takes the shape of a bell curve.
+
+
+
