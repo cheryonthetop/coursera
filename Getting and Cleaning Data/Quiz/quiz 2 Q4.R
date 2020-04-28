@@ -1,0 +1,5 @@
+library(XML)
+conn <- url('http://biostat.jhsph.edu/~jleek/contact.html')
+html <- readLines(conn)
+close(conn)
+c(nchar(html[10]), nchar(html[20]), nchar(html[30]), nchar(html[100]))

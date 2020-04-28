@@ -1,0 +1,5 @@
+setwd("C:/study zone/Coursera/Getting and Cleaning Data")
+library(jpeg)
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg",destfile = "./quiz3 q2.jpg")
+data <- readJPEG("quiz3 q2.jpg", native = TRUE)
+quantile(data, probs = c(0.3,0.8))
